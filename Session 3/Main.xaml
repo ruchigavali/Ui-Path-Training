@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="925,771" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,771" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
       <x:String>System.Activities</x:String>
@@ -29,7 +29,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -52,6 +52,16 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap:VirtualizedContainerService.HintSize="694,706" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -214,7 +224,7 @@
         </ui:InputDialog>
       </Sequence>
       <FlowStep.Next>
-        <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID4" DisplayName="Flow Switch" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_4">
+        <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID4" DisplayName="Flow Switch" Expression="[Operators]" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_4">
           <FlowSwitch.Default>
             <FlowStep x:Name="__ReferenceID5">
               <sap:WorkflowViewStateService.ViewState>
@@ -232,9 +242,6 @@
               </ui:MessageBox>
             </FlowStep>
           </FlowSwitch.Default>
-          <FlowSwitch.Expression>
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Operators" />
-          </FlowSwitch.Expression>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">285,216.49999999999997</av:Point>
@@ -253,7 +260,7 @@
                 <av:Size x:Key="ShapeSize">200,90</av:Size>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Addition" sap:VirtualizedContainerService.HintSize="400,326" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Addition" sap:VirtualizedContainerService.HintSize="200,90" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -264,7 +271,7 @@
                   <OutArgument x:TypeArguments="x:Int32">[output]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[num1 + num2]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32">[num1 + num2]</InArgument>
                 </Assign.Value>
               </Assign>
               <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" ChosenButton="[output]" DisplayName="Addition" sap:VirtualizedContainerService.HintSize="338,94" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[output]">
@@ -294,7 +301,7 @@
                   <OutArgument x:TypeArguments="x:Int32">[output]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[num1 - num2]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32">[num1 - num2]</InArgument>
                 </Assign.Value>
               </Assign>
               <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" ChosenButton="[output]" DisplayName="substraction" sap:VirtualizedContainerService.HintSize="338,94" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[output]">
@@ -313,7 +320,7 @@
                 <av:Size x:Key="ShapeSize">200,90</av:Size>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Multiplication" sap:VirtualizedContainerService.HintSize="200,90" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Multiplication" sap:VirtualizedContainerService.HintSize="400,326" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -324,7 +331,7 @@
                   <OutArgument x:TypeArguments="x:Int32">[output]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[num1 * num2]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32">[num1 * num2]</InArgument>
                 </Assign.Value>
               </Assign>
               <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" ChosenButton="[output]" DisplayName="Addition" sap:VirtualizedContainerService.HintSize="338,94" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[output]">
@@ -354,7 +361,7 @@
                   <OutArgument x:TypeArguments="x:Int32">[output]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[num1/num2]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32">[num1/num2]</InArgument>
                 </Assign.Value>
               </Assign>
               <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" ChosenButton="[output]" DisplayName="Addition" sap:VirtualizedContainerService.HintSize="338,94" sap2010:WorkflowViewState.IdRef="MessageBox_10" Text="[output]">
